@@ -1789,7 +1789,7 @@ def dept_logout(request):
 # Opens up page as PDF
 
 
-class ViewDailyPDF(LoginRequiredMixin, UserPassesTestMixin, View):
+class ViewDailyPDF(LoginRequiredMixin, UserPassesTestMixin):
 
     def get(self, request, *args, **kwargs):
         daily_data_exp = daily_charts(request)
@@ -1808,7 +1808,7 @@ class ViewDailyPDF(LoginRequiredMixin, UserPassesTestMixin, View):
         return False
 
 
-class ViewMonthlyPDF(LoginRequiredMixin, UserPassesTestMixin, View):
+class ViewMonthlyPDF(LoginRequiredMixin, UserPassesTestMixin):
 
     def get(self, request, *args, **kwargs):
         context = {
