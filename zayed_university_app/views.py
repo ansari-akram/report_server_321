@@ -22,13 +22,13 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from .utils import render_to_pdf
 from django.http import HttpResponse
 from django.views.generic import View
-
+import os
 import xlwt
 import random
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-tree = ET.parse('zayed_university_app\ZU_xml_v2.xml')
+tree = ET.parse(f'zayed_university_app{os.sep}ZU_xml_v2.xml')
 
 
 def similar(a, b):
